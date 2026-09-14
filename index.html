@@ -24,44 +24,46 @@
             font-family: 'Playfair Display', 'Times New Roman', serif;
         }
 
-        /* Contenedor del Póster (Proporción exacta) */
+        /* Contenedor del Póster */
         .poster {
             position: relative;
             width: 100%;
-            max-width: 800px;
+            max-width: 850px;
             aspect-ratio: 1 / 1.37;
             background-image: url('background.jpg');
             background-size: cover;
             background-position: center;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.85);
         }
 
-        /* 1. Logo TG (Esquina superior izquierda) */
+        /* 1. Logo TexGo (Más grande, visible y con sombreado potente) */
         .logo {
             position: absolute;
-            top: 3.5%;
-            left: 3.5%;
-            width: 18%;
+            top: 2.5%;
+            left: 2%;
+            width: 24%;
+            max-width: 200px;
             z-index: 10;
-            mix-blend-mode: multiply;
-            opacity: 0.85;
+            filter: drop-shadow(4px 6px 8px rgba(0, 0, 0, 0.65));
         }
 
         .logo img {
             width: 100%;
             height: auto;
             display: block;
+            object-fit: contain;
         }
 
-        /* 2. Modelo (Alineada a la izquierda abajo) */
+        /* 2. Modelo (Más grande y alineada bien a la izquierda) */
         .model {
             position: absolute;
-            left: 11.5%;
+            left: 2%;
             bottom: 0;
-            height: 82%;
+            height: 92%;
             z-index: 5;
             pointer-events: none;
+            filter: drop-shadow(8px 8px 16px rgba(0, 0, 0, 0.55));
         }
 
         .model img {
@@ -72,11 +74,11 @@
             object-position: bottom left;
         }
 
-        /* 3. Título COCOA (Con el punto a la izquierda) */
+        /* 3. Título COCOA (Con punto y sombra uniforme) */
         .title-container {
             position: absolute;
-            top: 8.5%;
-            right: 11%;
+            top: 7.5%;
+            right: 12.5%;
             z-index: 10;
             display: flex;
             align-items: flex-start;
@@ -84,71 +86,84 @@
         }
 
         .dot {
-            width: 7px;
-            height: 7px;
+            width: 8px;
+            height: 8px;
             background-color: #ffffff;
             border-radius: 50%;
-            margin-top: 18px;
+            margin-top: 22px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .title {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 6.8vw, 5.2rem);
-            font-weight: 500;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 600;
             letter-spacing: 0.05em;
-            color: #050505;
+            color: #0d0d0d;
             line-height: 0.9;
+            text-shadow: 4px 5px 10px rgba(0, 0, 0, 0.45), 1px 1px 2px rgba(255, 255, 255, 0.2);
         }
 
-        /* 4. Especificaciones (260 GM2 | 140 CM) */
+        /* 4. Especificaciones (260 GM2 | 140 CM con sombreado) */
         .specs {
             position: absolute;
-            top: 21.5%;
-            right: 10%;
+            top: 21%;
+            right: 12%;
             z-index: 10;
             display: flex;
-            gap: 1.8rem;
+            gap: 2rem;
         }
 
         .spec-text {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(1.2rem, 3.2vw, 2.5rem);
-            font-weight: 400;
-            color: #0a0a0a;
-            letter-spacing: 0.02em;
+            font-size: clamp(1.3rem, 3.6vw, 2.8rem);
+            font-weight: 500;
+            color: #0d0d0d;
+            letter-spacing: 0.03em;
+            text-shadow: 3px 4px 8px rgba(0, 0, 0, 0.45), 1px 1px 2px rgba(255, 255, 255, 0.2);
         }
 
-        /* 5. Franja Lateral de Colores PANTONE® */
+        /* 5. Franja Lateral de Colores PANTONE® (Con efecto Hover) */
         .pantone-bar {
             position: absolute;
             top: 0;
             right: 0;
             bottom: 0;
-            width: 10.2%;
+            width: 10.5%;
             z-index: 20;
             display: flex;
             flex-direction: column;
+            box-shadow: -4px 0 15px rgba(0,0,0,0.25);
         }
 
         .pantone-item {
             flex: 1;
             position: relative;
             width: 100%;
+            cursor: pointer;
+            transition: transform 0.25s ease, filter 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        /* Efecto al pasar el cursor sobre los tonos */
+        .pantone-item:hover {
+            transform: translateX(-8px);
+            z-index: 30;
+            filter: brightness(1.08);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
         }
 
         .pantone-label {
             position: absolute;
-            bottom: 3px;
+            bottom: 4px;
             right: 4px;
             font-family: Arial, Helvetica, sans-serif;
-            font-size: clamp(0.35rem, 0.6vw, 0.55rem);
+            font-size: clamp(0.35rem, 0.65vw, 0.6rem);
             font-weight: 800;
             color: #000000;
             letter-spacing: 0.02em;
             user-select: none;
         }
 
-        /* Ajustes específicos de texto en la muestra negra */
         .pantone-item.dark .pantone-label {
             color: #ffffff;
         }
@@ -161,15 +176,18 @@
             .poster {
                 box-shadow: none;
             }
+            .logo {
+                width: 28%;
+            }
         }
     </style>
 </head>
 <body>
 
     <div class="poster">
-        <!-- Logo TG -->
+        <!-- Logo TexGo -->
         <div class="logo">
-            <img src="logo.png" alt="TG Logo">
+            <img src="logo.png" alt="TexGo Logo">
         </div>
 
         <!-- Modelo -->
@@ -191,31 +209,31 @@
 
         <!-- Barra de Colores Pantone -->
         <div class="pantone-bar">
-            <div class="pantone-item" style="background-color: #FAF6EE;">
+            <div class="pantone-item" style="background-color: #FAF6EE;" title="PANTONE® Marfil">
                 <span class="pantone-label">PANTONE®</span>
             </div>
-            <div class="pantone-item" style="background-color: #EBD39B;">
+            <div class="pantone-item" style="background-color: #EBD39B;" title="PANTONE® Arena">
                 <span class="pantone-label">PANTONE®</span>
             </div>
-            <div class="pantone-item" style="background-color: #CCA887;">
+            <div class="pantone-item" style="background-color: #CCA887;" title="PANTONE® Beige">
                 <span class="pantone-label">PANTONE®</span>
             </div>
-            <div class="pantone-item" style="background-color: #CBE3EB;">
+            <div class="pantone-item" style="background-color: #CBE3EB;" title="PANTONE® Celeste">
                 <span class="pantone-label">PANTONE®</span>
             </div>
-            <div class="pantone-item" style="background-color: #D1E4CF;">
+            <div class="pantone-item" style="background-color: #D1E4CF;" title="PANTONE® Menta">
                 <span class="pantone-label">PANTONE®</span>
             </div>
-            <div class="pantone-item" style="background-color: #DCD3E7;">
+            <div class="pantone-item" style="background-color: #DCD3E7;" title="PANTONE® Lila">
                 <span class="pantone-label">PANTONE®</span>
             </div>
-            <div class="pantone-item" style="background-color: #71242C;">
+            <div class="pantone-item" style="background-color: #71242C;" title="PANTONE® Vino">
                 <span class="pantone-label">PANTONE®</span>
             </div>
-            <div class="pantone-item" style="background-color: #553930;">
+            <div class="pantone-item" style="background-color: #553930;" title="PANTONE® Cocoa">
                 <span class="pantone-label">PANTONE®</span>
             </div>
-            <div class="pantone-item dark" style="background-color: #0A0A0A;">
+            <div class="pantone-item dark" style="background-color: #0A0A0A;" title="PANTONE® Negro">
                 <span class="pantone-label">PANTONE®</span>
             </div>
         </div>
