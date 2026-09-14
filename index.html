@@ -6,7 +6,7 @@
     <title>COCOA - TexGo Colombia</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -55,11 +55,11 @@
             object-fit: contain;
         }
 
-        /* 2. Modelo (Mucho más a la izquierda y totalmente pegada al piso) */
+        /* 2. Modelo (Corrida más hacia abajo) */
         .model-container {
             position: absolute !important;
             left: -12% !important;
-            bottom: -1% !important;
+            bottom: -5% !important;
             height: 98% !important;
             z-index: 5 !important;
             display: flex !important;
@@ -67,7 +67,7 @@
             pointer-events: none;
         }
 
-        /* Sombra proyectada en el piso para integrar la modelo al fondo */
+        /* Sombra proyectada en el piso */
         .model-shadow {
             position: absolute;
             bottom: 0px;
@@ -92,15 +92,24 @@
             filter: drop-shadow(-10px 14px 20px rgba(0, 0, 0, 0.4));
         }
 
-        /* 3. Título COCOA */
-        .title-container {
+        /* Bloque de Información Superior Derecha */
+        .info-block {
             position: absolute !important;
-            top: 7.5% !important;
+            top: 6.5% !important;
             right: 12.5% !important;
             z-index: 10 !important;
             display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            text-align: right;
+        }
+
+        /* Título COCOA */
+        .title-container {
+            display: flex;
             align-items: flex-start;
             gap: 12px;
+            margin-bottom: 6px;
         }
 
         .dot {
@@ -114,7 +123,7 @@
 
         .title {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 8vw, 6rem);
+            font-size: clamp(3rem, 7.8vw, 5.8rem);
             font-weight: 600;
             letter-spacing: 0.05em;
             color: #0a0a0a;
@@ -122,23 +131,32 @@
             text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.15);
         }
 
-        /* 4. Especificaciones (260 GM2 | 140 CM) */
+        /* Composición de Composición / Material */
+        .composition {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(0.75rem, 1.8vw, 1.3rem);
+            font-weight: 600;
+            color: #1a1a1a;
+            letter-spacing: 0.15em;
+            margin-bottom: 12px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Especificaciones Técnicas (GM2 / CM) */
         .specs {
-            position: absolute !important;
-            top: 21% !important;
-            right: 12% !important;
-            z-index: 10 !important;
             display: flex;
-            gap: 2rem;
+            gap: 1.2rem;
+            justify-content: flex-end;
         }
 
         .spec-text {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(1.3rem, 3.6vw, 2.8rem);
+            font-size: clamp(0.95rem, 2.3vw, 1.7rem);
             font-weight: 500;
             color: #0a0a0a;
-            letter-spacing: 0.03em;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+            letter-spacing: 0.02em;
+            text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.12);
+            white-space: nowrap;
         }
 
         /* 5. Franja Lateral de Colores PANTONE® */
@@ -198,6 +216,9 @@
             .model-container {
                 left: -15% !important;
             }
+            .specs {
+                gap: 0.6rem;
+            }
         }
     </style>
 </head>
@@ -215,16 +236,22 @@
             <img src="model.png" alt="Modelo Cocoa">
         </div>
 
-        <!-- Título COCOA -->
-        <div class="title-container">
-            <div class="dot"></div>
-            <h1 class="title">COCOA</h1>
-        </div>
+        <!-- Bloque de Información (Título, Composición y Medidas) -->
+        <div class="info-block">
+            <!-- Título COCOA -->
+            <div class="title-container">
+                <div class="dot"></div>
+                <h1 class="title">COCOA</h1>
+            </div>
 
-        <!-- Especificaciones -->
-        <div class="specs">
-            <span class="spec-text">260 GM2</span>
-            <span class="spec-text">140 CM</span>
+            <!-- Composición de la Tela -->
+            <div class="composition">100% POLIESTER</div>
+
+            <!-- Especificaciones Técnicas -->
+            <div class="specs">
+                <span class="spec-text">275 GM2 (+/-5%)</span>
+                <span class="spec-text">152 CM (+/-5%)</span>
+            </div>
         </div>
 
         <!-- Barra de Colores Pantone -->
