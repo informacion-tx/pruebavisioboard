@@ -37,15 +37,15 @@
             box-shadow: 0 25px 50px rgba(0,0,0,0.85);
         }
 
-        /* 1. Logo TexGo (Ubicado bien arriba y a la izquierda) */
+        /* 1. Logo TexGo (Extremo Superior Izquierdo) */
         .logo {
             position: absolute !important;
-            top: 15px !important;
-            left: 15px !important;
-            width: 28% !important;
-            max-width: 230px !important;
+            top: -1.5% !important;
+            left: -2% !important;
+            width: 32% !important;
+            max-width: 260px !important;
             z-index: 20 !important;
-            filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3));
+            filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.35));
         }
 
         .logo img {
@@ -55,12 +55,12 @@
             object-fit: contain;
         }
 
-        /* 2. Modelo (Pegada al ras de abajo y bien a la izquierda) */
+        /* 2. Modelo (Mucho más a la izquierda y totalmente pegada al piso) */
         .model-container {
             position: absolute !important;
-            left: -3% !important;
-            bottom: 0 !important;
-            height: 94% !important;
+            left: -12% !important;
+            bottom: -1% !important;
+            height: 98% !important;
             z-index: 5 !important;
             display: flex !important;
             align-items: flex-end !important;
@@ -70,15 +70,15 @@
         /* Sombra proyectada en el piso para integrar la modelo al fondo */
         .model-shadow {
             position: absolute;
-            bottom: -2px;
-            left: 10%;
-            width: 80%;
+            bottom: 0px;
+            left: 15%;
+            width: 75%;
             height: 25px;
-            background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0) 80%);
+            background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0) 80%);
             border-radius: 50%;
             z-index: 4;
-            transform: scaleY(0.4);
-            filter: blur(6px);
+            transform: scaleY(0.35);
+            filter: blur(7px);
         }
 
         .model-container img {
@@ -89,8 +89,7 @@
             object-position: bottom left !important;
             position: relative;
             z-index: 5;
-            /* Sombra corporal suave integrada */
-            filter: drop-shadow(-8px 12px 18px rgba(0, 0, 0, 0.35));
+            filter: drop-shadow(-10px 14px 20px rgba(0, 0, 0, 0.4));
         }
 
         /* 3. Título COCOA */
@@ -194,7 +193,10 @@
                 box-shadow: none;
             }
             .logo {
-                width: 35% !important;
+                width: 38% !important;
+            }
+            .model-container {
+                left: -15% !important;
             }
         }
     </style>
