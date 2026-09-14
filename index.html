@@ -59,7 +59,7 @@
         .model-container {
             position: absolute !important;
             left: -12% !important;
-            bottom: -9% !important;
+            bottom: -14% !important;
             height: 98% !important;
             z-index: 5 !important;
             display: flex !important;
@@ -104,21 +104,11 @@
             text-align: right;
         }
 
-        /* Título COCOA */
+        /* Título COCOA sin punto */
         .title-container {
             display: flex;
             align-items: flex-start;
-            gap: 12px;
             margin-bottom: 4px;
-        }
-
-        .dot {
-            width: 9px;
-            height: 9px;
-            background-color: #1a1a1a;
-            border-radius: 50%;
-            margin-top: 22px;
-            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
         }
 
         .title {
@@ -142,7 +132,7 @@
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
 
-        /* Especificaciones Técnicas (GM2 arriba de CM) */
+        /* Especificaciones Técnicas (GM2 encima de CM) */
         .specs {
             display: flex;
             flex-direction: column;
@@ -236,16 +226,15 @@
 
         <!-- Bloque de Información -->
         <div class="info-block">
-            <!-- Título COCOA -->
+            <!-- Título COCOA (Sin punto) -->
             <div class="title-container">
-                <div class="dot"></div>
                 <h1 class="title">COCOA</h1>
             </div>
 
             <!-- Composición de la Tela -->
             <div class="composition">100% POLIESTER</div>
 
-            <!-- Especificaciones Técnicas (GM2 encima de CM) -->
+            <!-- Especificaciones Técnicas -->
             <div class="specs">
                 <span class="spec-text">275 GM2 (+/-5%)</span>
                 <span class="spec-text">152 CM (+/-5%)</span>
