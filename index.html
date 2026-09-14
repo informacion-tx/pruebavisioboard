@@ -37,15 +37,15 @@
             box-shadow: 0 25px 50px rgba(0,0,0,0.85);
         }
 
-        /* 1. Logo TexGo (Más arriba y más a la izquierda) */
+        /* 1. Logo TexGo (Ubicado bien arriba y a la izquierda) */
         .logo {
-            position: absolute;
-            top: 1%;
-            left: 0.8%;
-            width: 25%;
-            max-width: 210px;
-            z-index: 10;
-            filter: drop-shadow(4px 6px 8px rgba(0, 0, 0, 0.65));
+            position: absolute !important;
+            top: 15px !important;
+            left: 15px !important;
+            width: 28% !important;
+            max-width: 230px !important;
+            z-index: 20 !important;
+            filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3));
         }
 
         .logo img {
@@ -55,43 +55,62 @@
             object-fit: contain;
         }
 
-        /* 2. Modelo (Más abajo y pegada a la izquierda) */
-        .model {
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            height: 94%;
-            z-index: 5;
+        /* 2. Modelo (Pegada al ras de abajo y bien a la izquierda) */
+        .model-container {
+            position: absolute !important;
+            left: -3% !important;
+            bottom: 0 !important;
+            height: 94% !important;
+            z-index: 5 !important;
+            display: flex !important;
+            align-items: flex-end !important;
             pointer-events: none;
-            filter: drop-shadow(8px 8px 16px rgba(0, 0, 0, 0.55));
         }
 
-        .model img {
-            height: 100%;
-            width: auto;
-            display: block;
-            object-fit: contain;
-            object-position: bottom left;
+        /* Sombra proyectada en el piso para integrar la modelo al fondo */
+        .model-shadow {
+            position: absolute;
+            bottom: -2px;
+            left: 10%;
+            width: 80%;
+            height: 25px;
+            background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0) 80%);
+            border-radius: 50%;
+            z-index: 4;
+            transform: scaleY(0.4);
+            filter: blur(6px);
+        }
+
+        .model-container img {
+            height: 100% !important;
+            width: auto !important;
+            display: block !important;
+            object-fit: contain !important;
+            object-position: bottom left !important;
+            position: relative;
+            z-index: 5;
+            /* Sombra corporal suave integrada */
+            filter: drop-shadow(-8px 12px 18px rgba(0, 0, 0, 0.35));
         }
 
         /* 3. Título COCOA */
         .title-container {
-            position: absolute;
-            top: 7.5%;
-            right: 12.5%;
-            z-index: 10;
+            position: absolute !important;
+            top: 7.5% !important;
+            right: 12.5% !important;
+            z-index: 10 !important;
             display: flex;
             align-items: flex-start;
             gap: 12px;
         }
 
         .dot {
-            width: 8px;
-            height: 8px;
-            background-color: #ffffff;
+            width: 9px;
+            height: 9px;
+            background-color: #1a1a1a;
             border-radius: 50%;
             margin-top: 22px;
-            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
         }
 
         .title {
@@ -99,17 +118,17 @@
             font-size: clamp(3rem, 8vw, 6rem);
             font-weight: 600;
             letter-spacing: 0.05em;
-            color: #0d0d0d;
+            color: #0a0a0a;
             line-height: 0.9;
-            text-shadow: 4px 5px 10px rgba(0, 0, 0, 0.45), 1px 1px 2px rgba(255, 255, 255, 0.2);
+            text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.15);
         }
 
         /* 4. Especificaciones (260 GM2 | 140 CM) */
         .specs {
-            position: absolute;
-            top: 21%;
-            right: 12%;
-            z-index: 10;
+            position: absolute !important;
+            top: 21% !important;
+            right: 12% !important;
+            z-index: 10 !important;
             display: flex;
             gap: 2rem;
         }
@@ -118,22 +137,22 @@
             font-family: 'Playfair Display', serif;
             font-size: clamp(1.3rem, 3.6vw, 2.8rem);
             font-weight: 500;
-            color: #0d0d0d;
+            color: #0a0a0a;
             letter-spacing: 0.03em;
-            text-shadow: 3px 4px 8px rgba(0, 0, 0, 0.45), 1px 1px 2px rgba(255, 255, 255, 0.2);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
         }
 
         /* 5. Franja Lateral de Colores PANTONE® */
         .pantone-bar {
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            width: 10.5%;
-            z-index: 20;
+            position: absolute !important;
+            top: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            width: 10.5% !important;
+            z-index: 20 !important;
             display: flex;
             flex-direction: column;
-            box-shadow: -4px 0 15px rgba(0,0,0,0.25);
+            box-shadow: -3px 0 12px rgba(0,0,0,0.15);
         }
 
         .pantone-item {
@@ -148,7 +167,7 @@
             transform: translateX(-8px);
             z-index: 30;
             filter: brightness(1.08);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
         .pantone-label {
@@ -175,7 +194,7 @@
                 box-shadow: none;
             }
             .logo {
-                width: 30%;
+                width: 35% !important;
             }
         }
     </style>
@@ -188,8 +207,9 @@
             <img src="logo.png" alt="TexGo Logo">
         </div>
 
-        <!-- Modelo -->
-        <div class="model">
+        <!-- Modelo con Sombra de Piso -->
+        <div class="model-container">
+            <div class="model-shadow"></div>
             <img src="model.png" alt="Modelo Cocoa">
         </div>
 
