@@ -55,7 +55,7 @@
             object-fit: contain;
         }
 
-        /* 2. Modelo (Corrida más hacia abajo) */
+        /* 2. Modelo */
         .model-container {
             position: absolute !important;
             left: -12% !important;
@@ -109,7 +109,7 @@
             display: flex;
             align-items: flex-start;
             gap: 12px;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
         .dot {
@@ -131,22 +131,23 @@
             text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.15);
         }
 
-        /* Composición de Composición / Material */
+        /* Composición de Material */
         .composition {
             font-family: 'Montserrat', sans-serif;
             font-size: clamp(0.75rem, 1.8vw, 1.3rem);
             font-weight: 600;
             color: #1a1a1a;
             letter-spacing: 0.15em;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
 
-        /* Especificaciones Técnicas (GM2 / CM) */
+        /* Especificaciones Técnicas alineadas en columna (una debajo de otra) */
         .specs {
             display: flex;
-            gap: 1.2rem;
-            justify-content: flex-end;
+            flex-direction: column;
+            gap: 0.3rem;
+            align-items: flex-end;
         }
 
         .spec-text {
@@ -216,9 +217,6 @@
             .model-container {
                 left: -15% !important;
             }
-            .specs {
-                gap: 0.6rem;
-            }
         }
     </style>
 </head>
@@ -236,7 +234,7 @@
             <img src="model.png" alt="Modelo Cocoa">
         </div>
 
-        <!-- Bloque de Información (Título, Composición y Medidas) -->
+        <!-- Bloque de Información -->
         <div class="info-block">
             <!-- Título COCOA -->
             <div class="title-container">
@@ -247,10 +245,10 @@
             <!-- Composición de la Tela -->
             <div class="composition">100% POLIESTER</div>
 
-            <!-- Especificaciones Técnicas -->
+            <!-- Especificaciones Técnicas (En columna, GM2 debajo de CM) -->
             <div class="specs">
-                <span class="spec-text">275 GM2 (+/-5%)</span>
                 <span class="spec-text">152 CM (+/-5%)</span>
+                <span class="spec-text">275 GM2 (+/-5%)</span>
             </div>
         </div>
 
