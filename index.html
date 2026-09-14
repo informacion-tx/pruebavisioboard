@@ -6,7 +6,7 @@
     <title>COCOA - TexGo Colombia</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -104,11 +104,11 @@
             text-align: right;
         }
 
-        /* Título COCOA con Sombra Definida */
+        /* Título COCOA */
         .title-container {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
 
         .title {
@@ -121,36 +121,36 @@
             text-shadow: 3px 4px 8px rgba(0, 0, 0, 0.3), 1px 1px 2px rgba(255, 255, 255, 0.4);
         }
 
-        /* Composición de Material con Sombra */
+        /* Composición de Material */
         .composition {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Playfair Display', serif;
             font-size: clamp(0.75rem, 1.8vw, 1.3rem);
-            font-weight: 700;
+            font-weight: 600;
             color: #1a1a1a;
-            letter-spacing: 0.15em;
-            margin-bottom: 10px;
+            letter-spacing: 0.12em;
+            margin-bottom: 8px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25), 1px 1px 1px rgba(255, 255, 255, 0.3);
         }
 
-        /* Especificaciones Técnicas (GM2 y CM con Sombras) */
+        /* Especificaciones Técnicas (Mismo tamaño que Poliéster) */
         .specs {
             display: flex;
             flex-direction: column;
-            gap: 0.3rem;
+            gap: 0.25rem;
             align-items: flex-end;
         }
 
         .spec-text {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(0.95rem, 2.3vw, 1.7rem);
+            font-size: clamp(0.75rem, 1.8vw, 1.3rem);
             font-weight: 600;
             color: #0a0a0a;
-            letter-spacing: 0.02em;
-            text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.25), 1px 1px 1px rgba(255, 255, 255, 0.3);
+            letter-spacing: 0.08em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25), 1px 1px 1px rgba(255, 255, 255, 0.3);
             white-space: nowrap;
         }
 
-        /* 5. Franja Lateral de Colores Personalizados */
+        /* 5. Franja Lateral de Colores */
         .pantone-bar {
             position: absolute !important;
             top: 0 !important;
@@ -182,7 +182,7 @@
             position: absolute;
             bottom: 3px;
             right: 4px;
-            font-family: 'Montserrat', Arial, sans-serif;
+            font-family: 'Playfair Display', serif;
             font-size: clamp(0.32rem, 0.55vw, 0.52rem);
             font-weight: 700;
             color: #000000;
@@ -238,7 +238,7 @@
             <!-- Composición de la Tela -->
             <div class="composition">100% POLIESTER</div>
 
-            <!-- Especificaciones Técnicas -->
+            <!-- Especificaciones Técnicas (Mismo tamaño que la composición) -->
             <div class="specs">
                 <span class="spec-text">275 GM2 (+/-5%)</span>
                 <span class="spec-text">152 CM (+/-5%)</span>
