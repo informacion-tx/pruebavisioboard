@@ -6,7 +6,7 @@
     <title>COCOA - TexGo Colombia</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -15,251 +15,208 @@
         }
 
         body {
-            background-color: #0d0d0d;
-            color: #1a1a1a;
-            font-family: 'Montserrat', sans-serif;
+            background-color: #121212;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             padding: 20px;
+            font-family: 'Playfair Display', 'Times New Roman', serif;
         }
 
-        .board-container {
+        /* Contenedor del Póster (Proporción exacta) */
+        .poster {
             position: relative;
             width: 100%;
-            max-width: 900px;
-            aspect-ratio: 1 / 1.414; /* Proporción póster vertical A4 */
+            max-width: 800px;
+            aspect-ratio: 1 / 1.37;
             background-image: url('background.jpg');
             background-size: cover;
             background-position: center;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
             overflow: hidden;
-            display: flex;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
         }
 
-        /* Capa de contraste suave */
-        .overlay {
+        /* 1. Logo TG (Esquina superior izquierda) */
+        .logo {
             position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.1) 100%);
-            pointer-events: none;
-        }
-
-        /* Logo TexGo en esquina superior izquierda */
-        .logo-container {
-            position: absolute;
-            top: 4%;
-            left: 4%;
-            z-index: 10;
+            top: 3.5%;
+            left: 3.5%;
             width: 18%;
-            max-width: 140px;
+            z-index: 10;
+            mix-blend-mode: multiply;
+            opacity: 0.85;
         }
 
-        .logo-container img {
+        .logo img {
             width: 100%;
             height: auto;
-            object-fit: contain;
-            filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.3));
+            display: block;
         }
 
-        /* Tipografía e Información Central/Derecha */
-        .header-info {
+        /* 2. Modelo (Alineada a la izquierda abajo) */
+        .model {
             position: absolute;
-            top: 7%;
-            right: 18%;
-            z-index: 10;
-            text-align: right;
-            user-select: none;
-        }
-
-        .main-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 7.5vw, 6rem);
-            font-weight: 500;
-            letter-spacing: 0.08em;
-            color: #0b0b0b;
-            line-height: 1;
-            margin-bottom: 25px;
-            text-shadow: 0 1px 2px rgba(255,255,255,0.4);
-        }
-
-        .specs-row {
-            display: flex;
-            gap: 2rem;
-            justify-content: flex-end;
-            align-items: center;
-        }
-
-        .spec-item {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.1rem, 2.8vw, 2.2rem);
-            font-weight: 400;
-            color: #111111;
-            letter-spacing: 0.05em;
-            white-space: nowrap;
-        }
-
-        /* Imagen de la Modelo (Recortada sin fondo) */
-        .model-container {
-            position: absolute;
+            left: 11.5%;
             bottom: 0;
-            left: 8%;
-            height: 86%;
+            height: 82%;
             z-index: 5;
             pointer-events: none;
         }
 
-        .model-container img {
+        .model img {
             height: 100%;
             width: auto;
+            display: block;
             object-fit: contain;
             object-position: bottom left;
-            filter: drop-shadow(5px 10px 15px rgba(0, 0, 0, 0.4));
         }
 
-        /* Barra Lateral de Colores PANTONE® */
-        .pantone-sidebar {
+        /* 3. Título COCOA (Con el punto a la izquierda) */
+        .title-container {
+            position: absolute;
+            top: 8.5%;
+            right: 11%;
+            z-index: 10;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .dot {
+            width: 7px;
+            height: 7px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            margin-top: 18px;
+        }
+
+        .title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6.8vw, 5.2rem);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: #050505;
+            line-height: 0.9;
+        }
+
+        /* 4. Especificaciones (260 GM2 | 140 CM) */
+        .specs {
+            position: absolute;
+            top: 21.5%;
+            right: 10%;
+            z-index: 10;
+            display: flex;
+            gap: 1.8rem;
+        }
+
+        .spec-text {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.2rem, 3.2vw, 2.5rem);
+            font-weight: 400;
+            color: #0a0a0a;
+            letter-spacing: 0.02em;
+        }
+
+        /* 5. Franja Lateral de Colores PANTONE® */
+        .pantone-bar {
             position: absolute;
             top: 0;
             right: 0;
             bottom: 0;
-            width: 13%;
-            min-width: 85px;
-            z-index: 10;
-            display: flex;
-            flex-direction: column;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(5px);
-            box-shadow: -2px 0 15px rgba(0,0,0,0.15);
-        }
-
-        .pantone-swatch {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            position: relative;
-            cursor: pointer;
-            transition: transform 0.2s ease, filter 0.2s ease;
-            overflow: hidden;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .pantone-swatch:hover {
-            transform: translateX(-4px);
+            width: 10.2%;
             z-index: 20;
-            filter: brightness(1.05);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-
-        .swatch-color {
-            width: 100%;
-            height: 72%;
-        }
-
-        .swatch-label {
-            height: 28%;
-            background: #ffffff;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2px 4px;
+            flex-direction: column;
         }
 
-        .swatch-label span {
-            font-size: clamp(0.45rem, 0.75vw, 0.65rem);
-            font-weight: 700;
-            letter-spacing: 0.05em;
+        .pantone-item {
+            flex: 1;
+            position: relative;
+            width: 100%;
+        }
+
+        .pantone-label {
+            position: absolute;
+            bottom: 3px;
+            right: 4px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: clamp(0.35rem, 0.6vw, 0.55rem);
+            font-weight: 800;
             color: #000000;
+            letter-spacing: 0.02em;
+            user-select: none;
         }
 
-        /* Adaptación Responsive para Móviles */
+        /* Ajustes específicos de texto en la muestra negra */
+        .pantone-item.dark .pantone-label {
+            color: #ffffff;
+        }
+
+        /* Responsive para móviles */
         @media (max-width: 600px) {
             body {
                 padding: 0;
             }
-            .board-container {
+            .poster {
                 box-shadow: none;
-            }
-            .header-info {
-                right: 16%;
-                top: 5%;
-            }
-            .specs-row {
-                gap: 0.8rem;
-            }
-            .pantone-sidebar {
-                width: 15%;
-                min-width: 55px;
-            }
-            .swatch-label span {
-                font-size: 0.4rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="board-container">
-        <div class="overlay"></div>
-
-        <!-- Logo -->
-        <div class="logo-container">
-            <img src="logo.png" alt="TexGo Colombia Logo">
-        </div>
-
-        <!-- Encabezado y Especificaciones -->
-        <div class="header-info">
-            <h1 class="main-title">COCOA</h1>
-            <div class="specs-row">
-                <span class="spec-item">260 GM2</span>
-                <span class="spec-item">140 CM</span>
-            </div>
+    <div class="poster">
+        <!-- Logo TG -->
+        <div class="logo">
+            <img src="logo.png" alt="TG Logo">
         </div>
 
         <!-- Modelo -->
-        <div class="model-container">
-            <img src="model.png" alt="Modelo Femenina Traje Cocoa">
+        <div class="model">
+            <img src="model.png" alt="Modelo Cocoa">
+        </div>
+
+        <!-- Título COCOA -->
+        <div class="title-container">
+            <div class="dot"></div>
+            <h1 class="title">COCOA</h1>
+        </div>
+
+        <!-- Especificaciones -->
+        <div class="specs">
+            <span class="spec-text">260 GM2</span>
+            <span class="spec-text">140 CM</span>
         </div>
 
         <!-- Barra de Colores Pantone -->
-        <div class="pantone-sidebar">
-            <div class="pantone-swatch" title="Marfil / Crema">
-                <div class="swatch-color" style="background-color: #f7f4e9;"></div>
-                <div class="swatch-label"><span>PANTONE®</span></div>
+        <div class="pantone-bar">
+            <div class="pantone-item" style="background-color: #FAF6EE;">
+                <span class="pantone-label">PANTONE®</span>
             </div>
-            <div class="pantone-swatch" title="Arena / Beige Claro">
-                <div class="swatch-color" style="background-color: #ebd399;"></div>
-                <div class="swatch-label"><span>PANTONE®</span></div>
+            <div class="pantone-item" style="background-color: #EBD39B;">
+                <span class="pantone-label">PANTONE®</span>
             </div>
-            <div class="pantone-swatch" title="Marrón Claro / Camel">
-                <div class="swatch-color" style="background-color: #cca885;"></div>
-                <div class="swatch-label"><span>PANTONE®</span></div>
+            <div class="pantone-item" style="background-color: #CCA887;">
+                <span class="pantone-label">PANTONE®</span>
             </div>
-            <div class="pantone-swatch" title="Azul Pastel / Celeste Gray">
-                <div class="swatch-color" style="background-color: #cbe3eb;"></div>
-                <div class="swatch-label"><span>PANTONE®</span></div>
+            <div class="pantone-item" style="background-color: #CBE3EB;">
+                <span class="pantone-label">PANTONE®</span>
             </div>
-            <div class="pantone-swatch" title="Menta Suave">
-                <div class="swatch-color" style="background-color: #d1e4cf;"></div>
-                <div class="swatch-label"><span>PANTONE®</span></div>
+            <div class="pantone-item" style="background-color: #D1E4CF;">
+                <span class="pantone-label">PANTONE®</span>
             </div>
-            <div class="pantone-swatch" title="Lila / Lavanda">
-                <div class="swatch-color" style="background-color: #dcd3e7;"></div>
-                <div class="swatch-label"><span>PANTONE®</span></div>
+            <div class="pantone-item" style="background-color: #DCD3E7;">
+                <span class="pantone-label">PANTONE®</span>
             </div>
-            <div class="pantone-swatch" title="Borgoña / Tinto">
-                <div class="swatch-color" style="background-color: #71242c;"></div>
-                <div class="swatch-label"><span>PANTONE®</span></div>
+            <div class="pantone-item" style="background-color: #71242C;">
+                <span class="pantone-label">PANTONE®</span>
             </div>
-            <div class="pantone-swatch" title="Marrón Chocolate / Cocoa">
-                <div class="swatch-color" style="background-color: #553930;"></div>
-                <div class="swatch-label"><span>PANTONE®</span></div>
+            <div class="pantone-item" style="background-color: #553930;">
+                <span class="pantone-label">PANTONE®</span>
             </div>
-            <div class="pantone-swatch" title="Negro Profundo">
-                <div class="swatch-color" style="background-color: #0a0a0a;"></div>
-                <div class="swatch-label"><span>PANTONE®</span></div>
+            <div class="pantone-item dark" style="background-color: #0A0A0A;">
+                <span class="pantone-label">PANTONE®</span>
             </div>
         </div>
     </div>
