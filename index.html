@@ -37,13 +37,13 @@
             box-shadow: 0 25px 50px rgba(0,0,0,0.85);
         }
 
-        /* 1. Logo TexGo (Más grande, visible y con sombreado potente) */
+        /* 1. Logo TexGo (Más arriba y más a la izquierda) */
         .logo {
             position: absolute;
-            top: 2.5%;
-            left: 2%;
-            width: 24%;
-            max-width: 200px;
+            top: 1%;
+            left: 0.8%;
+            width: 25%;
+            max-width: 210px;
             z-index: 10;
             filter: drop-shadow(4px 6px 8px rgba(0, 0, 0, 0.65));
         }
@@ -55,12 +55,12 @@
             object-fit: contain;
         }
 
-        /* 2. Modelo (Más grande y alineada bien a la izquierda) */
+        /* 2. Modelo (Más abajo y pegada a la izquierda) */
         .model {
             position: absolute;
-            left: 2%;
+            left: 0;
             bottom: 0;
-            height: 92%;
+            height: 94%;
             z-index: 5;
             pointer-events: none;
             filter: drop-shadow(8px 8px 16px rgba(0, 0, 0, 0.55));
@@ -74,7 +74,7 @@
             object-position: bottom left;
         }
 
-        /* 3. Título COCOA (Con punto y sombra uniforme) */
+        /* 3. Título COCOA */
         .title-container {
             position: absolute;
             top: 7.5%;
@@ -104,7 +104,7 @@
             text-shadow: 4px 5px 10px rgba(0, 0, 0, 0.45), 1px 1px 2px rgba(255, 255, 255, 0.2);
         }
 
-        /* 4. Especificaciones (260 GM2 | 140 CM con sombreado) */
+        /* 4. Especificaciones (260 GM2 | 140 CM) */
         .specs {
             position: absolute;
             top: 21%;
@@ -123,7 +123,7 @@
             text-shadow: 3px 4px 8px rgba(0, 0, 0, 0.45), 1px 1px 2px rgba(255, 255, 255, 0.2);
         }
 
-        /* 5. Franja Lateral de Colores PANTONE® (Con efecto Hover) */
+        /* 5. Franja Lateral de Colores PANTONE® */
         .pantone-bar {
             position: absolute;
             top: 0;
@@ -144,7 +144,6 @@
             transition: transform 0.25s ease, filter 0.25s ease, box-shadow 0.25s ease;
         }
 
-        /* Efecto al pasar el cursor sobre los tonos */
         .pantone-item:hover {
             transform: translateX(-8px);
             z-index: 30;
@@ -168,7 +167,6 @@
             color: #ffffff;
         }
 
-        /* Responsive para móviles */
         @media (max-width: 600px) {
             body {
                 padding: 0;
@@ -177,7 +175,7 @@
                 box-shadow: none;
             }
             .logo {
-                width: 28%;
+                width: 30%;
             }
         }
     </style>
