@@ -6,7 +6,7 @@
     <title>COCOA - TexGo Colombia</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -37,7 +37,7 @@
             box-shadow: 0 25px 50px rgba(0,0,0,0.85);
         }
 
-        /* 1. Logo TexGo (Extremo Superior Izquierdo) */
+        /* 1. Logo TexGo */
         .logo {
             position: absolute !important;
             top: -1.5% !important;
@@ -55,7 +55,7 @@
             object-fit: contain;
         }
 
-        /* 2. Modelo (Bajada aún más) */
+        /* 2. Modelo */
         .model-container {
             position: absolute !important;
             left: -12% !important;
@@ -96,7 +96,7 @@
         .info-block {
             position: absolute !important;
             top: 6.5% !important;
-            right: 12.5% !important;
+            right: 13.5% !important;
             z-index: 10 !important;
             display: flex;
             flex-direction: column;
@@ -104,7 +104,7 @@
             text-align: right;
         }
 
-        /* Título COCOA sin punto */
+        /* Título COCOA con Sombra Definida */
         .title-container {
             display: flex;
             align-items: flex-start;
@@ -118,21 +118,21 @@
             letter-spacing: 0.05em;
             color: #0a0a0a;
             line-height: 0.9;
-            text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.15);
+            text-shadow: 3px 4px 8px rgba(0, 0, 0, 0.3), 1px 1px 2px rgba(255, 255, 255, 0.4);
         }
 
-        /* Composición de Material */
+        /* Composición de Material con Sombra */
         .composition {
             font-family: 'Montserrat', sans-serif;
             font-size: clamp(0.75rem, 1.8vw, 1.3rem);
-            font-weight: 600;
+            font-weight: 700;
             color: #1a1a1a;
             letter-spacing: 0.15em;
             margin-bottom: 10px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25), 1px 1px 1px rgba(255, 255, 255, 0.3);
         }
 
-        /* Especificaciones Técnicas (GM2 encima de CM) */
+        /* Especificaciones Técnicas (GM2 y CM con Sombras) */
         .specs {
             display: flex;
             flex-direction: column;
@@ -143,20 +143,20 @@
         .spec-text {
             font-family: 'Playfair Display', serif;
             font-size: clamp(0.95rem, 2.3vw, 1.7rem);
-            font-weight: 500;
+            font-weight: 600;
             color: #0a0a0a;
             letter-spacing: 0.02em;
-            text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.12);
+            text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.25), 1px 1px 1px rgba(255, 255, 255, 0.3);
             white-space: nowrap;
         }
 
-        /* 5. Franja Lateral de Colores PANTONE® */
+        /* 5. Franja Lateral de Colores Personalizados */
         .pantone-bar {
             position: absolute !important;
             top: 0 !important;
             right: 0 !important;
             bottom: 0 !important;
-            width: 10.5% !important;
+            width: 11.5% !important;
             z-index: 20 !important;
             display: flex;
             flex-direction: column;
@@ -180,14 +180,15 @@
 
         .pantone-label {
             position: absolute;
-            bottom: 4px;
+            bottom: 3px;
             right: 4px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: clamp(0.35rem, 0.65vw, 0.6rem);
-            font-weight: 800;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: clamp(0.32rem, 0.55vw, 0.52rem);
+            font-weight: 700;
             color: #000000;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.03em;
             user-select: none;
+            text-transform: uppercase;
         }
 
         .pantone-item.dark .pantone-label {
@@ -206,6 +207,9 @@
             }
             .model-container {
                 left: -15% !important;
+            }
+            .pantone-bar {
+                width: 13% !important;
             }
         }
     </style>
@@ -226,7 +230,7 @@
 
         <!-- Bloque de Información -->
         <div class="info-block">
-            <!-- Título COCOA (Sin punto) -->
+            <!-- Título COCOA -->
             <div class="title-container">
                 <h1 class="title">COCOA</h1>
             </div>
@@ -241,34 +245,51 @@
             </div>
         </div>
 
-        <!-- Barra de Colores Pantone -->
+        <!-- Barra de Colores Personalizada -->
         <div class="pantone-bar">
-            <div class="pantone-item" style="background-color: #FAF6EE;" title="PANTONE® Marfil">
-                <span class="pantone-label">PANTONE®</span>
+            <!-- 1. MARFIL -->
+            <div class="pantone-item" style="background-color: #F4EFE3;" title="MARFIL">
+                <span class="pantone-label">MARFIL</span>
             </div>
-            <div class="pantone-item" style="background-color: #EBD39B;" title="PANTONE® Arena">
-                <span class="pantone-label">PANTONE®</span>
+            <!-- 2. CREMA -->
+            <div class="pantone-item" style="background-color: #E8DCC4;" title="CREMA">
+                <span class="pantone-label">CREMA</span>
             </div>
-            <div class="pantone-item" style="background-color: #CCA887;" title="PANTONE® Beige">
-                <span class="pantone-label">PANTONE®</span>
+            <!-- 3. BALLET -->
+            <div class="pantone-item" style="background-color: #F8D9D9;" title="BALLET">
+                <span class="pantone-label">BALLET</span>
             </div>
-            <div class="pantone-item" style="background-color: #CBE3EB;" title="PANTONE® Celeste">
-                <span class="pantone-label">PANTONE®</span>
+            <!-- 4. SORBETE -->
+            <div class="pantone-item" style="background-color: #FBE28E;" title="SORBETE">
+                <span class="pantone-label">SORBETE</span>
             </div>
-            <div class="pantone-item" style="background-color: #D1E4CF;" title="PANTONE® Menta">
-                <span class="pantone-label">PANTONE®</span>
+            <!-- 5. SALVIA -->
+            <div class="pantone-item" style="background-color: #B9D0C1;" title="SALVIA">
+                <span class="pantone-label">SALVIA</span>
             </div>
-            <div class="pantone-item" style="background-color: #DCD3E7;" title="PANTONE® Lila">
-                <span class="pantone-label">PANTONE®</span>
+            <!-- 6. DARK SAND -->
+            <div class="pantone-item" style="background-color: #8C826E;" title="DARK SAND">
+                <span class="pantone-label">DARK SAND</span>
             </div>
-            <div class="pantone-item" style="background-color: #71242C;" title="PANTONE® Vino">
-                <span class="pantone-label">PANTONE®</span>
+            <!-- 7. TANG -->
+            <div class="pantone-item" style="background-color: #B58456;" title="TANG">
+                <span class="pantone-label">TANG</span>
             </div>
-            <div class="pantone-item" style="background-color: #553930;" title="PANTONE® Cocoa">
-                <span class="pantone-label">PANTONE®</span>
+            <!-- 8. CHOCOLATE -->
+            <div class="pantone-item dark" style="background-color: #4C3C37;" title="CHOCOLATE">
+                <span class="pantone-label">CHOCOLATE</span>
             </div>
-            <div class="pantone-item dark" style="background-color: #0A0A0A;" title="PANTONE® Negro">
-                <span class="pantone-label">PANTONE®</span>
+            <!-- 9. VINOTINTO -->
+            <div class="pantone-item dark" style="background-color: #4A0E17;" title="VINOTINTO">
+                <span class="pantone-label">VINOTINTO</span>
+            </div>
+            <!-- 10. TEAL -->
+            <div class="pantone-item dark" style="background-color: #438084;" title="TEAL">
+                <span class="pantone-label">TEAL</span>
+            </div>
+            <!-- 11. JET BLACK -->
+            <div class="pantone-item dark" style="background-color: #12181E;" title="JET BLACK">
+                <span class="pantone-label">JET BLACK</span>
             </div>
         </div>
     </div>
