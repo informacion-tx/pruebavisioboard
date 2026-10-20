@@ -21,31 +21,31 @@
             align-items: center;
             min-height: 100vh;
             padding: 20px;
-            font-family: 'Playfair Display', 'Times New Roman', serif;
+            font-family: 'Bell MT', 'Playfair Display', 'Times New Roman', serif;
         }
 
-        /* Contenedor del Póster */
+        /* Contenedor del Póster Principal con la nueva imagen de fondo */
         .poster {
             position: relative;
             width: 100%;
             max-width: 850px;
             aspect-ratio: 1 / 1.37;
-            background-image: url('background.jpg');
+            background-image: url('bg_editorial.png');
             background-size: cover;
-            background-position: center;
+            background-position: center top;
             overflow: hidden;
             box-shadow: 0 25px 50px rgba(0,0,0,0.85);
         }
 
-        /* 1. Logo TexGo */
+        /* Logo TexGo */
         .logo {
             position: absolute !important;
-            top: -1.5% !important;
-            left: -2% !important;
+            top: -3.5% !important;
+            right: -4% !important;
             width: 32% !important;
             max-width: 260px !important;
             z-index: 20 !important;
-            filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.35));
+            filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.55));
         }
 
         .logo img {
@@ -55,56 +55,18 @@
             object-fit: contain;
         }
 
-        /* 2. Modelo */
-        .model-container {
-            position: absolute !important;
-            left: -12% !important;
-            bottom: -14% !important;
-            height: 98% !important;
-            z-index: 5 !important;
-            display: flex !important;
-            align-items: flex-end !important;
-            pointer-events: none;
-        }
-
-        /* Sombra proyectada en el piso */
-        .model-shadow {
-            position: absolute;
-            bottom: 0px;
-            left: 15%;
-            width: 75%;
-            height: 25px;
-            background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0) 80%);
-            border-radius: 50%;
-            z-index: 4;
-            transform: scaleY(0.35);
-            filter: blur(7px);
-        }
-
-        .model-container img {
-            height: 100% !important;
-            width: auto !important;
-            display: block !important;
-            object-fit: contain !important;
-            object-position: bottom left !important;
-            position: relative;
-            z-index: 5;
-            filter: drop-shadow(-10px 14px 20px rgba(0, 0, 0, 0.4));
-        }
-
-        /* Bloque de Información Superior Derecha */
+        /* Bloque de Información Ubicado a la Izquierda */
         .info-block {
             position: absolute !important;
-            top: 6.5% !important;
-            right: 13.5% !important;
+            top: 7% !important;
+            left: 7% !important;
             z-index: 10 !important;
             display: flex;
             flex-direction: column;
-            align-items: flex-end;
-            text-align: right;
+            align-items: flex-start;
+            text-align: left;
         }
 
-        /* Título COCOA */
         .title-container {
             display: flex;
             align-items: flex-start;
@@ -112,89 +74,276 @@
         }
 
         .title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 7.8vw, 5.8rem);
+            font-family: 'Bell MT', 'Playfair Display', serif;
+            font-size: clamp(3.2rem, 8.2vw, 6.2rem);
             font-weight: 600;
             letter-spacing: 0.05em;
-            color: #0a0a0a;
+            color: #ffffff;
             line-height: 0.9;
-            text-shadow: 3px 4px 8px rgba(0, 0, 0, 0.3), 1px 1px 2px rgba(255, 255, 255, 0.4);
+            text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.85);
         }
 
-        /* Composición de Material */
+        /* Cuadro Más Pequeño y Ultra-Translúcido */
+        .info-details-card {
+            background: rgba(10, 10, 10, 0.25);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            border-radius: 3px;
+            padding: 4px 9px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 2px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
         .composition {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(0.75rem, 1.8vw, 1.3rem);
+            font-family: 'Bell MT', 'Playfair Display', serif;
+            font-size: clamp(0.72rem, 1.6vw, 1.15rem);
             font-weight: 600;
-            color: #1a1a1a;
-            letter-spacing: 0.12em;
-            margin-bottom: 8px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25), 1px 1px 1px rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+            letter-spacing: 0.1em;
+            text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.85);
         }
 
-        /* Especificaciones Técnicas (Mismo tamaño que Poliéster) */
         .specs {
             display: flex;
             flex-direction: column;
-            gap: 0.25rem;
-            align-items: flex-end;
+            gap: 0.15rem;
+            align-items: flex-start;
         }
 
         .spec-text {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(0.75rem, 1.8vw, 1.3rem);
+            font-family: 'Bell MT', 'Playfair Display', serif;
+            font-size: clamp(0.72rem, 1.6vw, 1.15rem);
             font-weight: 600;
-            color: #0a0a0a;
-            letter-spacing: 0.08em;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25), 1px 1px 1px rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+            letter-spacing: 0.07em;
+            text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.85);
             white-space: nowrap;
         }
 
-        /* 5. Franja Lateral de Colores */
-        .pantone-bar {
-            position: absolute !important;
-            top: 0 !important;
-            right: 0 !important;
-            bottom: 0 !important;
-            width: 11.5% !important;
-            z-index: 20 !important;
+        /* Contenedor de Botones Inferiores Ubicados a la Izquierda */
+        .buttons-container {
+            position: absolute;
+            bottom: 6%;
+            left: 7%;
+            z-index: 15;
             display: flex;
             flex-direction: column;
-            box-shadow: -3px 0 12px rgba(0,0,0,0.15);
+            gap: 12px;
+            align-items: flex-start;
         }
 
-        .pantone-item {
-            flex: 1;
-            position: relative;
-            width: 100%;
+        .btn-action {
+            background: rgba(10, 10, 10, 0.88);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 10px 22px;
+            font-family: 'Bell MT', 'Playfair Display', serif;
+            font-size: clamp(0.8rem, 1.5vw, 1.1rem);
+            font-weight: 600;
+            letter-spacing: 0.15em;
             cursor: pointer;
-            transition: transform 0.25s ease, filter 0.25s ease, box-shadow 0.25s ease;
+            backdrop-filter: blur(6px);
+            border-radius: 4px;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.45);
+            transition: all 0.3s ease;
+            white-space: nowrap;
         }
 
-        .pantone-item:hover {
-            transform: translateX(-8px);
-            z-index: 30;
-            filter: brightness(1.08);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        .btn-action:hover {
+            background: #ffffff;
+            color: #0a0a0a;
+            border-color: #0a0a0a;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.55);
         }
 
-        .pantone-label {
+        /* Modales Base */
+        .modal {
             position: absolute;
-            bottom: 3px;
-            right: 4px;
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(0.32rem, 0.55vw, 0.52rem);
+            inset: 0;
+            z-index: 50;
+            background: rgba(18, 18, 18, 0.95);
+            backdrop-filter: blur(8px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-title {
+            color: #ffffff;
+            font-family: 'Bell MT', 'Playfair Display', serif;
+            font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Grid de Colores */
+        .colors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 15px;
+            width: 100%;
+            max-width: 680px;
+            max-height: 65vh;
+            overflow-y: auto;
+            padding: 10px;
+        }
+
+        .color-card {
+            display: flex;
+            flex-direction: column;
+            background: #ffffff;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            transition: transform 0.25s ease;
+        }
+
+        .color-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .color-box {
+            height: 85px;
+            width: 100%;
+            border: 1px solid #ffffff;
+            box-sizing: border-box;
+        }
+
+        .color-name {
+            padding: 8px 4px;
+            text-align: center;
+            font-family: 'Bell MT', 'Playfair Display', serif;
+            font-size: 0.75rem;
             font-weight: 700;
-            color: #000000;
-            letter-spacing: 0.03em;
-            user-select: none;
+            color: #0a0a0a;
+            letter-spacing: 0.05em;
             text-transform: uppercase;
         }
 
-        .pantone-item.dark .pantone-label {
-            color: #ffffff;
+        /* Grid de Ideas de Confección */
+        .outfits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            width: 100%;
+            max-width: 740px;
+            max-height: 68vh;
+            overflow-y: auto;
+            padding: 10px;
         }
 
+        .outfit-card {
+            position: relative;
+            background: #0d0d0d;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            aspect-ratio: 9 / 16;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .outfit-card:hover {
+            transform: scale(1.03);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        .outfit-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.2s ease, object-position 0.2s ease;
+        }
+
+        .outfit-card.outfit-2 img {
+            transform: scale(1.07);
+        }
+
+        .outfit-card.outfit-3 img {
+            transform: scale(0.95) translateY(-3%);
+            object-position: center 0%;
+        }
+
+        /* --- ETIQUETAS Y LÍNEAS ULTRAFINAS EDITORIALES --- */
+        .badge-editorial {
+            position: absolute;
+            z-index: 20;
+            background: rgba(0, 0, 0, 0.9);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 2px 5px;
+            font-family: 'Bell MT', 'Playfair Display', serif;
+            font-size: clamp(0.42rem, 0.6vw, 0.55rem);
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            border-radius: 2px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.9);
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        .pointer-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 15;
+            pointer-events: none;
+        }
+
+        .pointer-svg polyline {
+            stroke: rgba(255, 255, 255, 0.85);
+            stroke-width: 0.35;
+            stroke-dasharray: 1.5,1.5;
+            fill: none;
+        }
+
+        .pointer-svg circle {
+            fill: #ffffff;
+        }
+
+        .btn-close {
+            margin-top: 20px;
+            background: transparent;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            padding: 8px 26px;
+            font-family: 'Bell MT', 'Playfair Display', serif;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            border-radius: 4px;
+        }
+
+        .btn-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #ffffff;
+        }
+
+        /* AJUSTES ESPECÍFICOS PARA DISPOSITIVOS MÓVILES */
         @media (max-width: 600px) {
             body {
                 padding: 0;
@@ -203,13 +352,42 @@
                 box-shadow: none;
             }
             .logo {
-                width: 38% !important;
+                width: 36% !important;
+                top: -3% !important;
+                right: -3% !important;
             }
-            .model-container {
-                left: -15% !important;
+            .info-block {
+                left: 5% !important;
+                top: 5% !important;
             }
-            .pantone-bar {
-                width: 13% !important;
+            .info-details-card {
+                padding: 3px 6px;
+            }
+            .buttons-container {
+                left: 5% !important;
+                bottom: 5% !important;
+            }
+            .colors-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+            }
+            .outfits-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 6px;
+                padding: 5px;
+            }
+            .badge-editorial {
+                font-size: 0.35rem !important;
+                padding: 1px 3px !important;
+                border-width: 0.5px !important;
+                letter-spacing: 0.04em !important;
+            }
+            .pointer-svg polyline {
+                stroke-width: 0.25 !important;
+                stroke-dasharray: 1,1 !important;
+            }
+            .pointer-svg circle {
+                r: 0.5 !important;
             }
         }
     </style>
@@ -217,82 +395,134 @@
 <body>
 
     <div class="poster">
-        <!-- Logo TexGo -->
+        <!-- Logo TexGo en la esquina superior derecha -->
         <div class="logo">
             <img src="logo.png" alt="TexGo Logo">
         </div>
 
-        <!-- Modelo con Sombra de Piso -->
-        <div class="model-container">
-            <div class="model-shadow"></div>
-            <img src="model.png" alt="Modelo Cocoa">
-        </div>
-
-        <!-- Bloque de Información -->
+        <!-- Bloque de Información Ubicado a la Izquierda -->
         <div class="info-block">
-            <!-- Título COCOA -->
             <div class="title-container">
                 <h1 class="title">COCOA</h1>
             </div>
 
-            <!-- Composición de la Tela -->
-            <div class="composition">100% POLIESTER</div>
-
-            <!-- Especificaciones Técnicas (Mismo tamaño que la composición) -->
-            <div class="specs">
-                <span class="spec-text">275 GM2 (+/-5%)</span>
-                <span class="spec-text">152 CM (+/-5%)</span>
+            <div class="info-details-card">
+                <div class="composition">100% POLIESTER</div>
+                <div class="specs">
+                    <span class="spec-text">275 GM2 (+/-5%)</span>
+                    <span class="spec-text">152 CM (+/-5%)</span>
+                </div>
             </div>
         </div>
 
-        <!-- Barra de Colores Personalizada -->
-        <div class="pantone-bar">
-            <!-- 1. MARFIL -->
-            <div class="pantone-item" style="background-color: #F4EFE3;" title="MARFIL">
-                <span class="pantone-label">MARFIL</span>
-            </div>
-            <!-- 2. CREMA -->
-            <div class="pantone-item" style="background-color: #E8DCC4;" title="CREMA">
-                <span class="pantone-label">CREMA</span>
-            </div>
-            <!-- 3. BALLET -->
-            <div class="pantone-item" style="background-color: #F8D9D9;" title="BALLET">
-                <span class="pantone-label">BALLET</span>
-            </div>
-            <!-- 4. SORBETE -->
-            <div class="pantone-item" style="background-color: #FBE28E;" title="SORBETE">
-                <span class="pantone-label">SORBETE</span>
-            </div>
-            <!-- 5. SALVIA -->
-            <div class="pantone-item" style="background-color: #B9D0C1;" title="SALVIA">
-                <span class="pantone-label">SALVIA</span>
-            </div>
-            <!-- 6. DARK SAND -->
-            <div class="pantone-item" style="background-color: #8C826E;" title="DARK SAND">
-                <span class="pantone-label">DARK SAND</span>
-            </div>
-            <!-- 7. TANG -->
-            <div class="pantone-item" style="background-color: #B58456;" title="TANG">
-                <span class="pantone-label">TANG</span>
-            </div>
-            <!-- 8. CHOCOLATE -->
-            <div class="pantone-item dark" style="background-color: #4C3C37;" title="CHOCOLATE">
-                <span class="pantone-label">CHOCOLATE</span>
-            </div>
-            <!-- 9. VINOTINTO -->
-            <div class="pantone-item dark" style="background-color: #4A0E17;" title="VINOTINTO">
-                <span class="pantone-label">VINOTINTO</span>
-            </div>
-            <!-- 10. TEAL -->
-            <div class="pantone-item dark" style="background-color: #438084;" title="TEAL">
-                <span class="pantone-label">TEAL</span>
-            </div>
-            <!-- 11. JET BLACK -->
-            <div class="pantone-item dark" style="background-color: #12181E;" title="JET BLACK">
-                <span class="pantone-label">JET BLACK</span>
-            </div>
+        <!-- Botones de Acción Ubicados Abajo a la Izquierda -->
+        <div class="buttons-container">
+            <button class="btn-action" onclick="openModal('colorsModal')">COLORES</button>
+            <button class="btn-action" onclick="openModal('ideasModal')">IDEAS DE CONFECCIÓN</button>
         </div>
+
+        <!-- Modal 1: Colores -->
+        <div class="modal" id="colorsModal">
+            <h2 class="modal-title">COLORES DISPONIBLES</h2>
+            <div class="colors-grid">
+                <div class="color-card">
+                    <div class="color-box" style="background-color: #F4EFE3;"></div>
+                    <div class="color-name">MARFIL</div>
+                </div>
+                <div class="color-card">
+                    <div class="color-box" style="background-color: #E8DCC4;"></div>
+                    <div class="color-name">CREMA</div>
+                </div>
+                <div class="color-card">
+                    <div class="color-box" style="background-color: #F8D9D9;"></div>
+                    <div class="color-name">BALLET</div>
+                </div>
+                <div class="color-card">
+                    <div class="color-box" style="background-color: #FBE28E;"></div>
+                    <div class="color-name">SORBETE</div>
+                </div>
+                <div class="color-card">
+                    <div class="color-box" style="background-color: #B9D0C1;"></div>
+                    <div class="color-name">SALVIA</div>
+                </div>
+                <div class="color-card">
+                    <div class="color-box" style="background-color: #8C826E;"></div>
+                    <div class="color-name">DARK SAND</div>
+                </div>
+                <div class="color-card">
+                    <div class="color-box" style="background-color: #B58456;"></div>
+                    <div class="color-name">TANG</div>
+                </div>
+                <div class="color-card">
+                    <div class="color-box" style="background-color: #4C3C37;"></div>
+                    <div class="color-name">CHOCOLATE</div>
+                </div>
+                <div class="color-card">
+                    <div class="color-box" style="background-color: #4A0E17;"></div>
+                    <div class="color-name">VINOTINTO</div>
+                </div>
+                <div class="color-card">
+                    <div class="color-box" style="background-color: #438084;"></div>
+                    <div class="color-name">TEAL</div>
+                </div>
+                <div class="color-card">
+                    <div class="color-box" style="background-color: #12181E;"></div>
+                    <div class="color-name">JET BLACK</div>
+                </div>
+            </div>
+            <button class="btn-close" onclick="closeModal('colorsModal')">CERRAR</button>
+        </div>
+
+        <!-- Modal 2: Ideas de Confección -->
+        <div class="modal" id="ideasModal">
+            <h2 class="modal-title">IDEAS DE CONFECCIÓN</h2>
+            <div class="outfits-grid">
+                
+                <!-- Outfit 1: Vinotinto -->
+                <div class="outfit-card">
+                    <img src="outfit1.jpg" alt="Confección Outfit Vinotinto">
+                    <div class="badge-editorial" style="top: 5%; right: 1.5%;">VINOTINTO</div>
+                    <svg class="pointer-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                        <polyline points="88,7 88,38 62,38" />
+                        <circle cx="62" cy="38" r="0.6" />
+                    </svg>
+                </div>
+
+                <!-- Outfit 2: Crema -->
+                <div class="outfit-card outfit-2">
+                    <img src="outfit2.jpg" alt="Confección Outfit Beige">
+                    <div class="badge-editorial" style="top: 74%; left: 5%;">CREMA</div>
+                    <svg class="pointer-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                        <polyline points="28,76 28,64 48,64" />
+                        <circle cx="48" cy="64" r="0.6" />
+                    </svg>
+                </div>
+
+                <!-- Outfit 3: Marfil -->
+                <div class="outfit-card outfit-3">
+                    <img src="outfit3.jpg" alt="Confección Outfit Blanco Jeans">
+                    <div class="badge-editorial" style="top: 14%; left: 5%;">MARFIL</div>
+                    <svg class="pointer-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                        <polyline points="28,16 28,28 38,28" />
+                        <circle cx="38" cy="28" r="0.6" />
+                    </svg>
+                </div>
+
+            </div>
+            <button class="btn-close" onclick="closeModal('ideasModal')">CERRAR</button>
+        </div>
+
     </div>
+
+    <script>
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+    </script>
 
 </body>
 </html>
