@@ -24,7 +24,7 @@
             font-family: 'Bell MT', 'Playfair Display', 'Times New Roman', serif;
         }
 
-        /* Contenedor del Póster Principal con la nueva imagen de Montenegro */
+        /* Contenedor del Póster Principal */
         .poster {
             position: relative;
             width: 100%;
@@ -37,7 +37,7 @@
             box-shadow: 0 25px 50px rgba(0,0,0,0.85);
         }
 
-        /* Logo TexGo */
+        /* Logo TexGo con Bordado Blanco Difuminado */
         .logo {
             position: absolute !important;
             top: -3.5% !important;
@@ -45,7 +45,7 @@
             width: 32% !important;
             max-width: 260px !important;
             z-index: 20 !important;
-            filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.55));
+            filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.75)) drop-shadow(0 0 4px rgba(255, 255, 255, 0.9)) drop-shadow(2px 4px 10px rgba(0, 0, 0, 0.6));
         }
 
         .logo img {
@@ -55,11 +55,11 @@
             object-fit: contain;
         }
 
-        /* Bloque de Información Ubicado a la Izquierda */
+        /* Bloque de Información Reubicado más a la Izquierda */
         .info-block {
             position: absolute !important;
             top: 7% !important;
-            left: 7% !important;
+            left: 4% !important;
             z-index: 10 !important;
             display: flex;
             flex-direction: column;
@@ -83,19 +83,19 @@
             text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.85);
         }
 
-        /* Cuadro Ultra-Translúcido de Protección de Legibilidad */
+        /* Cuadro Extendido Horizontal y Casi Invisible */
         .info-details-card {
-            background: rgba(10, 10, 10, 0.25);
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.22);
+            background: rgba(10, 10, 10, 0.08);
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 3px;
-            padding: 6px 10px;
+            padding: 5px 12px;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            gap: 3px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            gap: 2px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
             margin-top: 4px;
         }
 
@@ -106,14 +106,14 @@
             color: #ffffff;
             letter-spacing: 0.08em;
             text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.85);
-            line-height: 1.25;
+            white-space: nowrap;
         }
 
         .specs {
             display: flex;
-            flex-direction: column;
-            gap: 0.15rem;
-            align-items: flex-start;
+            flex-direction: row;
+            gap: 12px;
+            align-items: center;
         }
 
         .spec-text {
@@ -126,11 +126,11 @@
             white-space: nowrap;
         }
 
-        /* Contenedor de Botones Inferiores Ubicados a la Izquierda */
+        /* Contenedor de Botones Inferiores Alineados en el Mismo Eje Izquierdo */
         .buttons-container {
             position: absolute;
             bottom: 6%;
-            left: 7%;
+            left: 4%;
             z-index: 15;
             display: flex;
             flex-direction: column;
@@ -195,13 +195,13 @@
             text-align: center;
         }
 
-        /* Grid de Colores Actualizado para Montenegro */
+        /* Grid de Colores Estructurado en 3 - 3 - 1 (Negro abajo al centro) */
         .colors-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 15px;
             width: 100%;
-            max-width: 680px;
+            max-width: 520px;
             max-height: 65vh;
             overflow-y: auto;
             padding: 10px;
@@ -219,6 +219,11 @@
 
         .color-card:hover {
             transform: translateY(-5px);
+        }
+
+        /* Tarjeta Centrada en la 3ra Fila (Negro) */
+        .color-card.color-center {
+            grid-column: 2 / span 1;
         }
 
         .color-box {
@@ -359,19 +364,23 @@
                 right: -3% !important;
             }
             .info-block {
-                left: 5% !important;
-                top: 5% !important;
+                left: 4% !important;
+                top: 4% !important;
             }
             .info-details-card {
-                padding: 4px 7px;
+                padding: 3px 6px;
+            }
+            .specs {
+                gap: 8px;
             }
             .buttons-container {
-                left: 5% !important;
-                bottom: 5% !important;
+                left: 4% !important;
+                bottom: 4% !important;
             }
             .colors-grid {
                 grid-template-columns: repeat(3, 1fr);
-                gap: 10px;
+                gap: 8px;
+                max-width: 100%;
             }
             .outfits-grid {
                 grid-template-columns: repeat(3, 1fr);
@@ -397,23 +406,19 @@
 <body>
 
     <div class="poster">
-        <!-- Logo TexGo en la esquina superior derecha -->
+        <!-- Logo TexGo con Bordado Difuminado Blanco -->
         <div class="logo">
             <img src="logo.png" alt="TexGo Logo">
         </div>
 
-        <!-- Bloque de Información Ubicado a la Izquierda -->
+        <!-- Bloque de Información Alineado a la Izquierda -->
         <div class="info-block">
             <div class="title-container">
                 <h1 class="title">MONTENEGRO</h1>
             </div>
 
             <div class="info-details-card">
-                <div class="composition">
-                    90% POLIESTER<br>
-                    8.5% RAYON<br>
-                    1.5% SPANDEX
-                </div>
+                <div class="composition">90% POLIESTER / 8.5% RAYON / 1.5% SPANDEX</div>
                 <div class="specs">
                     <span class="spec-text">300 GM2 (+/-5%)</span>
                     <span class="spec-text">150 CM (+/-5%)</span>
@@ -421,16 +426,17 @@
             </div>
         </div>
 
-        <!-- Botones de Acción Ubicados Abajo a la Izquierda -->
+        <!-- Botones de Acción Alineados en el Mismo Eje Izquierdo -->
         <div class="buttons-container">
             <button class="btn-action" onclick="openModal('colorsModal')">COLORES</button>
             <button class="btn-action" onclick="openModal('ideasModal')">IDEAS DE CONFECCIÓN</button>
         </div>
 
-        <!-- Modal 1: Colores Montenegro -->
+        <!-- Modal 1: Colores (3 - 3 - 1) -->
         <div class="modal" id="colorsModal">
             <h2 class="modal-title">COLORES DISPONIBLES</h2>
             <div class="colors-grid">
+                <!-- Fila 1 -->
                 <div class="color-card">
                     <div class="color-box" style="background-color: #fcfcfa;"></div>
                     <div class="color-name">MARFIL</div>
@@ -443,6 +449,8 @@
                     <div class="color-box" style="background-color: #87867e;"></div>
                     <div class="color-name">DARK SAND</div>
                 </div>
+
+                <!-- Fila 2 -->
                 <div class="color-card">
                     <div class="color-box" style="background-color: #5c473e;"></div>
                     <div class="color-name">MOCHA MOUSE</div>
@@ -455,7 +463,9 @@
                     <div class="color-box" style="background-color: #422020;"></div>
                     <div class="color-name">VINOTINTO</div>
                 </div>
-                <div class="color-card">
+
+                <!-- Fila 3 (Centrada al medio) -->
+                <div class="color-card color-center">
                     <div class="color-box" style="background-color: #000000;"></div>
                     <div class="color-name">NEGRO</div>
                 </div>
