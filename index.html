@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COCOA - TexGo Colombia</title>
+    <title>MONTENEGRO - TexGo Colombia</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
@@ -24,13 +24,13 @@
             font-family: 'Bell MT', 'Playfair Display', 'Times New Roman', serif;
         }
 
-        /* Contenedor del Póster Principal con la nueva imagen de fondo */
+        /* Contenedor del Póster Principal con la nueva imagen de Montenegro */
         .poster {
             position: relative;
             width: 100%;
             max-width: 850px;
             aspect-ratio: 1 / 1.37;
-            background-image: url('bg_editorial.png');
+            background-image: url('montenegro_bg.png');
             background-size: cover;
             background-position: center top;
             overflow: hidden;
@@ -75,7 +75,7 @@
 
         .title {
             font-family: 'Bell MT', 'Playfair Display', serif;
-            font-size: clamp(3.2rem, 8.2vw, 6.2rem);
+            font-size: clamp(2.4rem, 6.5vw, 5.2rem);
             font-weight: 600;
             letter-spacing: 0.05em;
             color: #ffffff;
@@ -83,28 +83,30 @@
             text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.85);
         }
 
-        /* Cuadro Más Pequeño y Ultra-Translúcido */
+        /* Cuadro Ultra-Translúcido de Protección de Legibilidad */
         .info-details-card {
             background: rgba(10, 10, 10, 0.25);
             backdrop-filter: blur(5px);
             -webkit-backdrop-filter: blur(5px);
             border: 1px solid rgba(255, 255, 255, 0.22);
             border-radius: 3px;
-            padding: 4px 9px;
+            padding: 6px 10px;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            gap: 2px;
+            gap: 3px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            margin-top: 4px;
         }
 
         .composition {
             font-family: 'Bell MT', 'Playfair Display', serif;
-            font-size: clamp(0.72rem, 1.6vw, 1.15rem);
+            font-size: clamp(0.68rem, 1.4vw, 1.05rem);
             font-weight: 600;
             color: #ffffff;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.08em;
             text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.85);
+            line-height: 1.25;
         }
 
         .specs {
@@ -116,7 +118,7 @@
 
         .spec-text {
             font-family: 'Bell MT', 'Playfair Display', serif;
-            font-size: clamp(0.72rem, 1.6vw, 1.15rem);
+            font-size: clamp(0.68rem, 1.4vw, 1.05rem);
             font-weight: 600;
             color: #ffffff;
             letter-spacing: 0.07em;
@@ -193,10 +195,10 @@
             text-align: center;
         }
 
-        /* Grid de Colores */
+        /* Grid de Colores Actualizado para Montenegro */
         .colors-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
             gap: 15px;
             width: 100%;
             max-width: 680px;
@@ -222,7 +224,7 @@
         .color-box {
             height: 85px;
             width: 100%;
-            border: 1px solid #ffffff;
+            border: 1px solid rgba(0,0,0,0.1);
             box-sizing: border-box;
         }
 
@@ -361,7 +363,7 @@
                 top: 5% !important;
             }
             .info-details-card {
-                padding: 3px 6px;
+                padding: 4px 7px;
             }
             .buttons-container {
                 left: 5% !important;
@@ -403,14 +405,18 @@
         <!-- Bloque de Información Ubicado a la Izquierda -->
         <div class="info-block">
             <div class="title-container">
-                <h1 class="title">COCOA</h1>
+                <h1 class="title">MONTENEGRO</h1>
             </div>
 
             <div class="info-details-card">
-                <div class="composition">100% POLIESTER</div>
+                <div class="composition">
+                    90% POLIESTER<br>
+                    8.5% RAYON<br>
+                    1.5% SPANDEX
+                </div>
                 <div class="specs">
-                    <span class="spec-text">275 GM2 (+/-5%)</span>
-                    <span class="spec-text">152 CM (+/-5%)</span>
+                    <span class="spec-text">300 GM2 (+/-5%)</span>
+                    <span class="spec-text">150 CM (+/-5%)</span>
                 </div>
             </div>
         </div>
@@ -421,53 +427,37 @@
             <button class="btn-action" onclick="openModal('ideasModal')">IDEAS DE CONFECCIÓN</button>
         </div>
 
-        <!-- Modal 1: Colores -->
+        <!-- Modal 1: Colores Montenegro -->
         <div class="modal" id="colorsModal">
             <h2 class="modal-title">COLORES DISPONIBLES</h2>
             <div class="colors-grid">
                 <div class="color-card">
-                    <div class="color-box" style="background-color: #F4EFE3;"></div>
+                    <div class="color-box" style="background-color: #fcfcfa;"></div>
                     <div class="color-name">MARFIL</div>
                 </div>
                 <div class="color-card">
-                    <div class="color-box" style="background-color: #E8DCC4;"></div>
+                    <div class="color-box" style="background-color: #e8e8dc;"></div>
                     <div class="color-name">CREMA</div>
                 </div>
                 <div class="color-card">
-                    <div class="color-box" style="background-color: #F8D9D9;"></div>
-                    <div class="color-name">BALLET</div>
-                </div>
-                <div class="color-card">
-                    <div class="color-box" style="background-color: #FBE28E;"></div>
-                    <div class="color-name">SORBETE</div>
-                </div>
-                <div class="color-card">
-                    <div class="color-box" style="background-color: #B9D0C1;"></div>
-                    <div class="color-name">SALVIA</div>
-                </div>
-                <div class="color-card">
-                    <div class="color-box" style="background-color: #8C826E;"></div>
+                    <div class="color-box" style="background-color: #87867e;"></div>
                     <div class="color-name">DARK SAND</div>
                 </div>
                 <div class="color-card">
-                    <div class="color-box" style="background-color: #B58456;"></div>
-                    <div class="color-name">TANG</div>
+                    <div class="color-box" style="background-color: #5c473e;"></div>
+                    <div class="color-name">MOCHA MOUSE</div>
                 </div>
                 <div class="color-card">
-                    <div class="color-box" style="background-color: #4C3C37;"></div>
-                    <div class="color-name">CHOCOLATE</div>
+                    <div class="color-box" style="background-color: #241f1d;"></div>
+                    <div class="color-name">CAFÉ</div>
                 </div>
                 <div class="color-card">
-                    <div class="color-box" style="background-color: #4A0E17;"></div>
+                    <div class="color-box" style="background-color: #422020;"></div>
                     <div class="color-name">VINOTINTO</div>
                 </div>
                 <div class="color-card">
-                    <div class="color-box" style="background-color: #438084;"></div>
-                    <div class="color-name">TEAL</div>
-                </div>
-                <div class="color-card">
-                    <div class="color-box" style="background-color: #12181E;"></div>
-                    <div class="color-name">JET BLACK</div>
+                    <div class="color-box" style="background-color: #000000;"></div>
+                    <div class="color-name">NEGRO</div>
                 </div>
             </div>
             <button class="btn-close" onclick="closeModal('colorsModal')">CERRAR</button>
