@@ -37,7 +37,7 @@
             box-shadow: 0 25px 50px rgba(0,0,0,0.85);
         }
 
-        /* Logo TexGo con Bordado Blanco Difuminado */
+        /* Logo TexGo (Restaurado a su estilo limpio original) */
         .logo {
             position: absolute !important;
             top: -3.5% !important;
@@ -45,7 +45,7 @@
             width: 32% !important;
             max-width: 260px !important;
             z-index: 20 !important;
-            filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.75)) drop-shadow(0 0 4px rgba(255, 255, 255, 0.9)) drop-shadow(2px 4px 10px rgba(0, 0, 0, 0.6));
+            filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.55));
         }
 
         .logo img {
@@ -55,7 +55,7 @@
             object-fit: contain;
         }
 
-        /* Bloque de Información Reubicado más a la Izquierda */
+        /* Bloque de Información Alineado a la Izquierda */
         .info-block {
             position: absolute !important;
             top: 7% !important;
@@ -73,9 +73,10 @@
             margin-bottom: 6px;
         }
 
+        /* Título MONTENEGRO más pequeño */
         .title {
             font-family: 'Bell MT', 'Playfair Display', serif;
-            font-size: clamp(2.4rem, 6.5vw, 5.2rem);
+            font-size: clamp(2rem, 5.2vw, 4.2rem);
             font-weight: 600;
             letter-spacing: 0.05em;
             color: #ffffff;
@@ -83,42 +84,42 @@
             text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.85);
         }
 
-        /* Cuadro Extendido Horizontal y Casi Invisible */
+        /* Cuadro Compacto y Ultra-Translúcido */
         .info-details-card {
             background: rgba(10, 10, 10, 0.08);
             backdrop-filter: blur(2px);
             -webkit-backdrop-filter: blur(2px);
             border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 3px;
-            padding: 5px 12px;
+            padding: 5px 10px;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            gap: 2px;
+            gap: 3px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
             margin-top: 4px;
         }
 
         .composition {
             font-family: 'Bell MT', 'Playfair Display', serif;
-            font-size: clamp(0.68rem, 1.4vw, 1.05rem);
+            font-size: clamp(0.65rem, 1.3vw, 0.98rem);
             font-weight: 600;
             color: #ffffff;
             letter-spacing: 0.08em;
             text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.85);
-            white-space: nowrap;
+            line-height: 1.25;
         }
 
         .specs {
             display: flex;
-            flex-direction: row;
-            gap: 12px;
-            align-items: center;
+            flex-direction: column;
+            gap: 0.15rem;
+            align-items: flex-start;
         }
 
         .spec-text {
             font-family: 'Bell MT', 'Playfair Display', serif;
-            font-size: clamp(0.68rem, 1.4vw, 1.05rem);
+            font-size: clamp(0.65rem, 1.3vw, 0.98rem);
             font-weight: 600;
             color: #ffffff;
             letter-spacing: 0.07em;
@@ -126,7 +127,7 @@
             white-space: nowrap;
         }
 
-        /* Contenedor de Botones Inferiores Alineados en el Mismo Eje Izquierdo */
+        /* Contenedor de Botones Inferiores */
         .buttons-container {
             position: absolute;
             bottom: 6%;
@@ -195,7 +196,7 @@
             text-align: center;
         }
 
-        /* Grid de Colores Estructurado en 3 - 3 - 1 (Negro abajo al centro) */
+        /* Grid de Colores Estructurado en 3 - 3 - 1 */
         .colors-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -370,9 +371,6 @@
             .info-details-card {
                 padding: 3px 6px;
             }
-            .specs {
-                gap: 8px;
-            }
             .buttons-container {
                 left: 4% !important;
                 bottom: 4% !important;
@@ -406,7 +404,7 @@
 <body>
 
     <div class="poster">
-        <!-- Logo TexGo con Bordado Difuminado Blanco -->
+        <!-- Logo TexGo en la esquina superior derecha -->
         <div class="logo">
             <img src="logo.png" alt="TexGo Logo">
         </div>
@@ -418,7 +416,10 @@
             </div>
 
             <div class="info-details-card">
-                <div class="composition">90% POLIESTER / 8.5% RAYON / 1.5% SPANDEX</div>
+                <div class="composition">
+                    90% POLIESTER<br>
+                    8.5% RAYON / 1.5% SPANDEX
+                </div>
                 <div class="specs">
                     <span class="spec-text">300 GM2 (+/-5%)</span>
                     <span class="spec-text">150 CM (+/-5%)</span>
@@ -426,7 +427,7 @@
             </div>
         </div>
 
-        <!-- Botones de Acción Alineados en el Mismo Eje Izquierdo -->
+        <!-- Botones de Acción Alineados a la Izquierda -->
         <div class="buttons-container">
             <button class="btn-action" onclick="openModal('colorsModal')">COLORES</button>
             <button class="btn-action" onclick="openModal('ideasModal')">IDEAS DE CONFECCIÓN</button>
